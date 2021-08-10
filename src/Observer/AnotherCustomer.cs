@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Observer.Subscriber;
 
 namespace Observer
 {
-    public class AnotherCustomer : ISubscriber
+    public class AnotherCustomer : ISubscriber<T>
     {
-        public void Update(List<Product> products)
+        public void Update(IReadOnlyCollection<T> products)
         {
-            if (products.Exists(product => product.Name.Equals("Słicz")))
+            if (products.Any(arg => arg.Name.Equals("Słicz")))
             {
                 Console.WriteLine("Nice, Słicz is available in store. \n");
             }

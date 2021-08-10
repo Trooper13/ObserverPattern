@@ -2,8 +2,8 @@
 
 namespace Observer.Subscriber
 {
-    public interface ISubscriber
+    public interface ISubscriber<T>
     {
-        void Update(List<Product> product);
+        void Update(IReadOnlyCollection<T> product);
     }
 }

@@ -3,10 +3,10 @@ using Observer.Subscriber;
 
 namespace Observer.Publisher
 {
-    public interface IPublisher
+    public interface IPublisher<T>
     {
-        void AddSubscriber(ISubscriber subscriber);
-        void RemoveSubscriber(ISubscriber subscriber);
-        void Notify(List<Product> products);
+        void AddSubscriber(ISubscriber<T> subscriber);
+        void RemoveSubscriber(ISubscriber<T> subscriber);
+        void Notify(IReadOnlyCollection<T> products);
     }
 }
