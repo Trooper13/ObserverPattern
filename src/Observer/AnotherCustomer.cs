@@ -5,9 +5,9 @@ using Observer.Subscriber;
 
 namespace Observer
 {
-    public class AnotherCustomer : ISubscriber<T>
+    public class AnotherCustomer : ISubscriber<Product>
     {
-        public void Update(IReadOnlyCollection<T> products)
+        public void Update(IReadOnlyCollection<Product> products)
         {
             if (products.Any(arg => arg.Name.Equals("Słicz")))
             {

@@ -6,21 +6,21 @@ using Observer.Subscriber;
 
 namespace Observer
 {
-    public class Shop : IPublisher<T>
+    public class Shop : IPublisher<Product>
     {
-        public List<T> Products { get; set; }
-        private List<ISubscriber<T>> _subscribers;
+        public List<Product> Products { get; set; }
+        private List<ISubscriber<Product>> _subscribers;
 
         public Shop()
         {
-            Products = new List<T>();
-            _subscribers = new List<ISubscriber<T>>();
+            Products = new List<Product>();
+            _subscribers = new List<ISubscriber<Product>>();
         }
 
         public void AddProduct(string name)
         {
             Console.WriteLine($"Shop: New {name} has been added to the store.");
-            Products.Add(new T(name));
+            Products.Add(new Product(name));
             Notify(Products);
         }
 
@@ -34,19 +34,19 @@ namespace Observer
             }
         }
 
-        public void AddSubscriber(ISubscriber<T> subscriber)
+        public void AddSubscriber(ISubscriber<Product> subscriber)
         {
             _subscribers.Add(subscriber);
             Console.WriteLine("Shop: Subscriber has been added.");
         }
 
-        public void RemoveSubscriber(ISubscriber<T> subscriber)
+        public void RemoveSubscriber(ISubscriber<Product> subscriber)
         {
             _subscribers.Remove(subscriber);
             Console.WriteLine("Shop: Subscriber has been removed.");
         }
 
-        public void Notify(IReadOnlyCollection<T> products)
+        public void Notify(IReadOnlyCollection<Product> products)
         {
             foreach (var subscriber in _subscribers)
             {

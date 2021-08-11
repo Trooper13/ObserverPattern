@@ -1,10 +1,10 @@
 ﻿namespace Observer
 {
-    public class T
+    public class Product
     {
         public string Name { get; set; }
 
-        public T(string name)
+        public Product(string name)
         {
             Name = name;
         }

@@ -5,9 +5,9 @@ using Observer.Subscriber;
 
 namespace Observer
 {
-    public class Customer : ISubscriber<T>
+    public class Customer : ISubscriber<Product>
     {
-        public void Update(IReadOnlyCollection<T> products)
+        public void Update(IReadOnlyCollection<Product> products)
         {
             if (products.Count(arg => arg.Name.Equals("Ajfon")) > 1)
             {
