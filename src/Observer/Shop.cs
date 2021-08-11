@@ -46,7 +46,7 @@ namespace Observer
             Console.WriteLine("Shop: Subscriber has been removed.");
         }
 
-        public void Notify(IReadOnlyCollection<Product> products)
+        private void Notify(IReadOnlyCollection<Product> products)
         {
             foreach (var subscriber in _subscribers)
             {

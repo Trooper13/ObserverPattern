@@ -25,8 +25,7 @@ namespace Observer
             shop.RemoveProduct("Ajfon");
             shop.RemoveProduct("Ajfon");
             shop.RemoveProduct("Słicz");
-
-
+            
             Console.ReadKey();
 
         }

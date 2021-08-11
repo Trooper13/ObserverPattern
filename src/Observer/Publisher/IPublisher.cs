@@ -7,6 +7,5 @@ namespace Observer.Publisher
     {
         void AddSubscriber(ISubscriber<T> subscriber);
         void RemoveSubscriber(ISubscriber<T> subscriber);
-        void Notify(IReadOnlyCollection<T> products);
     }
 }
